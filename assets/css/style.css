@@ -18,6 +18,7 @@ img {
     --red: #FF6863;
     --green: #869F76;
     --blue: #246D82;
+    --smallPix: 5px;
 }
 
 body {
@@ -55,16 +56,24 @@ h1 {
 }
 
 /* MAIN STYLE */
+main > div {
+    border: .5px dashed var(--pink);
+    border-radius: var(--smallPix);
+    padding: 2rem 10rem;
+    width: 55%;
+}
+
 ul {
     list-style-type: none;
-    border: .5px dashed var(--pink);
-    border-radius: 5px;
-    padding: 2rem 10rem;
 }
 
 ul li {
     margin: 1rem 0;
     border-bottom: .5px solid var(--pink);
+}
+
+li > span:first-child {
+    width: 60%;
 }
 
 .colorRed {
@@ -77,13 +86,13 @@ ul li {
 
 .congratsLi {
     border-bottom: transparent;
-    letter-spacing: 4px;
+    letter-spacing: var(--smallPix);
     font-family: 'Rubik Microbe', cursive;
     color: var(--green);
 }
 
-li button {
-    margin-left: 2rem;
+button {
+    margin-left: .8rem;
     background-color: transparent;
     border: transparent;
     cursor: pointer;
@@ -95,4 +104,29 @@ li i {
 
 li button:hover {
     transform: scale(2);
+}
+
+input {
+    background-color: transparent;
+    color: white;
+    border: 1px solid var(--pink);
+    border-radius: var(--smallPix);
+    font-size: 1rem;
+    padding: .4rem 1rem;
+    width: 60%;
+}
+
+div > button:last-child {
+    border-radius: var(--smallPix);
+    border: 1px solid var(--pink);
+    padding: .5rem .6rem;
+    background-color: var(--blue);
+    letter-spacing: var(--smallPix);
+    text-align: center;
+}
+
+div > button:last-child:hover {
+    background-color: var(--pink);
+    color: var(--green);
+    font-weight: 900;
 }

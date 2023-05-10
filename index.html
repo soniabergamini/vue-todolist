@@ -22,17 +22,21 @@
             <h1>TO-DO LIST</h1>
         </header>
         <main :class="mainClasses">
-            <ul>
-                <li v-for="(todo, i) in todoList" :class="liClasses">
-                    <span>📌 {{todo.text}}</span>
-                    <small>DONE: 
-                        <span v-if="todo.done === true" class="colorGreen">{{todo.done}}</span>
-                        <span v-else="todo.done === false" class="colorRed">{{todo.done}}</span>
-                        <button @click="removeTask(i)"><i class="fa-regular fa-trash-can"></i></button>
-                    </small>
-                </li>
-                <li v-show="todoList.length === 0" class="congratsLi">ALL DONE! You Rock 🎉🍻</li>
-            </ul>
+            <div>
+                <ul>
+                    <li v-for="(todo, i) in todoList" :class="liClasses">
+                        <span>📌 {{todo.text}}</span>
+                        <small>DONE: 
+                            <span v-if="todo.done === true" class="colorGreen">{{todo.done}}</span>
+                            <span v-else="todo.done === false" class="colorRed">{{todo.done}}</span>
+                            <button @click="removeTask(i)"><i class="fa-regular fa-trash-can"></i></button>
+                        </small>
+                    </li>
+                    <li v-show="todoList.length === 0" class="congratsLi">ALL DONE! You Rock 🎉🍻</li>
+                </ul>
+                <input v-model="newTask.text" type="text" placeholder="New todo here...">
+                <button @click="addTask()">ADD</button>
+            </div>
         </main>
     </div>
     <!-- JS Script -->
