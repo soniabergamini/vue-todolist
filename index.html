@@ -27,7 +27,7 @@
                 <ul>
                     <li v-for="(todo, i) in todoList" :class="liClasses">
                         <!-- Task Name -->
-                        <span>📌 {{todo.text}}</span>
+                        <span :class="todo.done ? 'taskDone' : null">📌 {{todo.text}}</span>
                         <!-- Task Status and Buttons -->
                         <small class="pRelative dFlex gap1em">DONE: 
                             <!-- Task Status -->

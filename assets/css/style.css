@@ -48,6 +48,8 @@ body {
 .border        {border: 1px solid var(--red);}
 .w100Perc      {width: 100%;}
 .h100Vh        {height: 100vh;}
+.colorRed      {color: var(--red);}
+.colorGreen    {color: var(--green);}
 
 /* HEADER STYLE */
 h1 {
@@ -77,12 +79,8 @@ li > span:first-child {
     width: 60%;
 }
 
-.colorRed {
-    color: var(--red);
-}
-
-.colorGreen {
-    color: var(--green);
+.taskDone {
+    text-decoration: line-through;
 }
 
 .congratsLi {
