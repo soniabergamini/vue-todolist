@@ -89,6 +89,8 @@ li > span:first-child {
     letter-spacing: var(--smallPix);
     font-family: 'Rubik Microbe', cursive;
     color: var(--green);
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
 button {

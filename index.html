@@ -34,7 +34,7 @@
                     </li>
                     <li v-show="todoList.length === 0" class="congratsLi">ALL DONE! You Rock 🎉🍻</li>
                 </ul>
-                <input v-model="newTask.text" type="text" placeholder="New todo here...">
+                <input v-model="newTask.text" type="text" placeholder="New todo here..." @keyUp.enter="addTask()">
                 <button @click="addTask()">ADD</button>
             </div>
         </main>
