@@ -23,17 +23,26 @@
         </header>
         <main :class="mainClasses">
             <div>
+                <!-- ToDo List Section-->
                 <ul>
-                    <li @click="changeTaskStatus(i)" v-for="(todo, i) in todoList" :class="liClasses">
+                    <li v-for="(todo, i) in todoList" :class="liClasses">
+                        <!-- Task Name -->
                         <span>📌 {{todo.text}}</span>
+                        <!-- Task Status and Buttons -->
                         <small>DONE: 
+                            <!-- Task Status -->
                             <span v-if="todo.done === true" class="colorGreen">{{todo.done}}</span>
                             <span v-else="todo.done === false" class="colorRed">{{todo.done}}</span>
+                            <!-- Change Status Buttons -->
+                            <button v-if="todo.done === true" v-tooltip="changeStatus" @click="changeTaskStatus(i)"><i class="fa-regular fa-circle-xmark colorRed"></i></button>
+                            <button v-else="todo.done === false" @click="changeTaskStatus(i)"><i class="fa-solid fa-circle-check colorGreen"></i></button>
+                            <!-- Trash Button -->
                             <button @click="removeTask(i)"><i class="fa-regular fa-trash-can"></i></button>
                         </small>
                     </li>
                     <li v-show="todoList.length === 0" class="congratsLi">ALL DONE! You Rock 🎉🍻</li>
                 </ul>
+                <!-- Add Task Section -->
                 <input :style="inpuntInv" v-model="newTask.text" type="text" placeholder="New todo here..." @keyUp.enter="addTask()">
                 <button @click="addTask()">ADD</button>
             </div>
