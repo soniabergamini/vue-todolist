@@ -16,7 +16,8 @@ createApp({
             ],
             mainClasses: "dFlex alignCenter justyCenter",
             liClasses: "dFlex gap2em justySpaceBtw",
-            inpuntInv: ""
+            inpuntInv: "",
+            currentMouseover: "null"
         }
     },
     methods: {
@@ -42,6 +43,19 @@ createApp({
         // Change task status (done: true/false)
         changeTaskStatus(position) {
             this.todoList[position].done = !this.todoList[position].done
+        },
+        tooltipsClass(i) {
+            if (this.currentMouseover === i) {
+                return "pAbsolute tooltips"
+            } else {
+                return "pAbsolute dNone tooltips"
+            }    
+        },
+        showTooltip(i) {
+            this.currentMouseover = i
+        },
+        hideTooltip() {
+            this.currentMouseover = null
         }
     }
 }).mount('#app')

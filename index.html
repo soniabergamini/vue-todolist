@@ -29,13 +29,14 @@
                         <!-- Task Name -->
                         <span>📌 {{todo.text}}</span>
                         <!-- Task Status and Buttons -->
-                        <small>DONE: 
+                        <small class="pRelative">DONE: 
                             <!-- Task Status -->
                             <span v-if="todo.done === true" class="colorGreen">{{todo.done}}</span>
                             <span v-else="todo.done === false" class="colorRed">{{todo.done}}</span>
                             <!-- Change Status Buttons -->
-                            <button v-if="todo.done === true" v-tooltip="changeStatus" @click="changeTaskStatus(i)"><i class="fa-regular fa-circle-xmark colorRed"></i></button>
-                            <button v-else="todo.done === false" @click="changeTaskStatus(i)"><i class="fa-solid fa-circle-check colorGreen"></i></button>
+                            <span :class="tooltipsClass(i)">change status</span>
+                            <button v-if="todo.done === true" @mouseover="showTooltip(i)" @mouseleave="hideTooltip()" @click="changeTaskStatus(i)"><i class="fa-regular fa-circle-xmark colorRed"></i></button>
+                            <button v-else="todo.done === false" @mouseover="showTooltip(i)" @mouseleave="hideTooltip()" @click="changeTaskStatus(i)"><i class="fa-solid fa-circle-check colorGreen"></i></button>
                             <!-- Trash Button -->
                             <button @click="removeTask(i)"><i class="fa-regular fa-trash-can"></i></button>
                         </small>
