@@ -25,11 +25,13 @@
             <ul>
                 <li v-for="(todo, i) in todoList" :class="liClasses">
                     <span>📌 {{todo.text}}</span>
-                    <span>DONE: 
-                        <small v-if="todo.done === true" class="colorGreen">{{todo.done}}</small>
-                        <small v-else="todo.done === false" class="colorRed">{{todo.done}}</small>
-                    </span>
+                    <small>DONE: 
+                        <span v-if="todo.done === true" class="colorGreen">{{todo.done}}</span>
+                        <span v-else="todo.done === false" class="colorRed">{{todo.done}}</span>
+                        <button @click="removeTask(i)"><i class="fa-regular fa-trash-can"></i></button>
+                    </small>
                 </li>
+                <li v-show="todoList.length === 0" class="congratsLi">ALL DONE! You Rock 🎉🍻</li>
             </ul>
         </main>
     </div>

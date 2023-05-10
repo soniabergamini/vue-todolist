@@ -74,3 +74,25 @@ ul li {
 .colorGreen {
     color: var(--green);
 }
+
+.congratsLi {
+    border-bottom: transparent;
+    letter-spacing: 4px;
+    font-family: 'Rubik Microbe', cursive;
+    color: var(--green);
+}
+
+li button {
+    margin-left: 2rem;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+li i {
+    color: var(--red);
+}
+
+li button:hover {
+    transform: scale(2);
+}

@@ -11,7 +11,13 @@ createApp({
                 { text: 'Take a walk with Dea🦮',   done: false }
             ],
             mainClasses: "dFlex alignCenter justyCenter",
-            liClasses: "dFlex gap2em justySpaceBtw",
+            liClasses: "dFlex gap2em justySpaceBtw"
+        }
+    },
+    methods: {
+        removeTask(position) {
+            this.todoList.splice(position, 1),
+            console.log(this.todoList)
         }
     }
 }).mount('#app')
