@@ -24,7 +24,7 @@
         <main :class="mainClasses">
             <div>
                 <ul>
-                    <li v-for="(todo, i) in todoList" :class="liClasses">
+                    <li @click="changeTaskStatus(i)" v-for="(todo, i) in todoList" :class="liClasses">
                         <span>📌 {{todo.text}}</span>
                         <small>DONE: 
                             <span v-if="todo.done === true" class="colorGreen">{{todo.done}}</span>

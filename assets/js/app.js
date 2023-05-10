@@ -26,23 +26,22 @@ createApp({
         },
         // Add task after input a new todo
         addTask() {
-            // let newTodo = {
-            //     text: this.newTask.text,
-            //     done: false
-            // }:
-            
             if (this.newTask.text.length > 2) {
                 // If newTask is correctly written, add it to the list
                 let newTodo = {...this.newTask};
                 this.todoList.push(newTodo),
                 this.newTask.text = ""
+                // Alternative Method to add newTask:
+                // let newTodo = { text: this.newTask.text, done: false },
             } else {
                 // If newTask is badly written, add/remove shake animation
                 this.inpuntInv = "animation: shake .2s; animation-iteration-count: 2;",
-                setTimeout(() => {
-                    this.inpuntInv = ""
-                }, 600);
+                setTimeout(() => this.inpuntInv = "", 600);
             }                   
+        },
+        // Change task status (done: true/false)
+        changeTaskStatus(position) {
+            this.todoList[position].done = !this.todoList[position].done
         }
     }
 }).mount('#app')
