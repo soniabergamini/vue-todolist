@@ -41,8 +41,8 @@ createApp({
             }                   
         },
         // Change task status (done: true/false)
-        changeTaskStatus(position) {
-            this.todoList[position].done = !this.todoList[position].done
+        changeTaskStatus(i) {
+            this.todoList[i].done = !this.todoList[i].done
         },
         // Add classes to tooltips
         tooltipsClass(i) {
