@@ -44,6 +44,7 @@ createApp({
         changeTaskStatus(position) {
             this.todoList[position].done = !this.todoList[position].done
         },
+        // Add classes to tooltips
         tooltipsClass(i) {
             if (this.currentMouseover === i) {
                 return "pAbsolute tooltips"
@@ -51,9 +52,11 @@ createApp({
                 return "pAbsolute dNone tooltips"
             }    
         },
+        // Show tooltip on "change task status button" mouseover
         showTooltip(i) {
             this.currentMouseover = i
         },
+        // Hide tooltip on "change task status button" mouseleave
         hideTooltip() {
             this.currentMouseover = null
         }
