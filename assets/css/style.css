@@ -36,6 +36,7 @@ body {
 .justySpaceEve {justify-content: space-evenly;}
 .fWrap         {flex-wrap: wrap;}
 .gap2em        {gap: 2em;}
+.gap1em        {gap: 1em}
 .pRelative     {position: relative;}
 .pAbsolute     {position: absolute;}
 .pSticky       {position: sticky;}
@@ -59,7 +60,7 @@ h1 {
 main > div {
     border: .5px dashed var(--pink);
     border-radius: var(--smallPix);
-    padding: 2rem 10rem;
+    padding: 2rem 5%;
     width: 55%;
 }
 
@@ -94,7 +95,6 @@ li > span:first-child {
 }
 
 button {
-    margin-left: .8rem;
     background-color: transparent;
     border: transparent;
     cursor: pointer;
@@ -114,7 +114,7 @@ li button:hover {
     background-color: grey;
     padding: 0 .5rem;
     border-radius: var(--smallPix);
-    font-size: 11px;
+    font-size: 12px;
 }
 
 input {
@@ -142,6 +142,7 @@ div > button:last-child {
     background-color: var(--blue);
     letter-spacing: var(--smallPix);
     text-align: center;
+    margin-left: .6rem;
 }
 
 div > button:last-child:hover {

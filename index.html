@@ -29,16 +29,16 @@
                         <!-- Task Name -->
                         <span>📌 {{todo.text}}</span>
                         <!-- Task Status and Buttons -->
-                        <small class="pRelative">DONE: 
+                        <small class="pRelative dFlex gap1em">DONE: 
                             <!-- Task Status -->
                             <span v-if="todo.done === true" class="colorGreen">{{todo.done}}</span>
                             <span v-else="todo.done === false" class="colorRed">{{todo.done}}</span>
                             <!-- Change Status Buttons and tooltips -->
                             <span :class="tooltipsClass(i)">change status</span>
-                            <button v-if="todo.done === true" @mouseover="showTooltip(i)" @mouseleave="hideTooltip()" @click="changeTaskStatus(i)"><i class="fa-regular fa-circle-xmark colorRed"></i></button>
-                            <button v-else="todo.done === false" @mouseover="showTooltip(i)" @mouseleave="hideTooltip()" @click="changeTaskStatus(i)"><i class="fa-solid fa-circle-check colorGreen"></i></button>
+                            <button v-if="todo.done === true" @mouseover="showTooltip(i)" @mouseleave="hideTooltip()" @click="changeTaskStatus(i)"> <i class="fa-regular fa-circle-xmark colorRed"></i> </button>
+                            <button v-else="todo.done === false" @mouseover="showTooltip(i)" @mouseleave="hideTooltip()" @click="changeTaskStatus(i)"> <i class="fa-solid fa-circle-check colorGreen"></i> </button>
                             <!-- Trash Button -->
-                            <button @click="removeTask(i)"><i class="fa-regular fa-trash-can"></i></button>
+                            <button @click="removeTask(i)"> <i class="fa-regular fa-trash-can"></i></button>
                         </small>
                     </li>
                     <li v-show="todoList.length === 0" class="congratsLi">ALL DONE! You Rock 🎉🍻</li>

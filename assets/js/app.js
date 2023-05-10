@@ -12,7 +12,7 @@ createApp({
                 { text: 'Have launch with Jack',    done: false }, 
                 { text: 'Send emails',              done: false }, 
                 { text: 'Learn VueJS',              done: true },
-                { text: 'Take a walk with Dea🦮',   done: false }
+                { text: 'Take a walk with Dea 🦮',   done: false }
             ],
             mainClasses: "dFlex alignCenter justyCenter",
             liClasses: "dFlex gap2em justySpaceBtw",
