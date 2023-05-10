@@ -3,8 +3,8 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 'Rubik Microbe', cursive;
-    /* font-family: 'Poiret One', cursive; */
+    /* font-family: 'Rubik Microbe', cursive; */
+    font-family: 'Poiret One', cursive;
     color: white;
 }
 
@@ -13,6 +13,13 @@ img {
 } 
 
 /* GENERAL STYLE */
+:root {
+    --pink: #FEDDD5;
+    --red: #FF6863;
+    --green: #869F76;
+    --blue: #246D82;
+}
+
 body {
     background-color: rgb(34, 28, 33);
 }
@@ -27,7 +34,7 @@ body {
 .justySpaceBtw {justify-content: space-between;}
 .justySpaceEve {justify-content: space-evenly;}
 .fWrap         {flex-wrap: wrap;}
-.gap1em        {gap: 1em;}
+.gap2em        {gap: 2em;}
 .pRelative     {position: relative;}
 .pAbsolute     {position: absolute;}
 .pSticky       {position: sticky;}
@@ -36,8 +43,34 @@ body {
 .cPointer      {cursor: pointer;}
 .textAlignCent {text-align: center;}
 .pad1em        {padding: 1em;}
-.border        {border: 1px solid red;}
+.border        {border: 1px solid var(--red);}
 .w100Perc      {width: 100%;}
 .h100Vh        {height: 100vh;}
 
+/* HEADER STYLE */
+h1 {
+    font-family: 'Rubik Microbe', cursive;
+    text-align: center;
+    margin: 3rem auto;
+}
+
 /* MAIN STYLE */
+ul {
+    list-style-type: none;
+    border: .5px dashed var(--pink);
+    border-radius: 5px;
+    padding: 2rem 10rem;
+}
+
+ul li {
+    margin: 1rem 0;
+    border-bottom: .5px solid var(--pink);
+}
+
+.colorRed {
+    color: var(--red);
+}
+
+.colorGreen {
+    color: var(--green);
+}

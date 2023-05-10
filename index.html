@@ -18,8 +18,19 @@
 </head>
 <body>
     <div id="app">
-        <main>
-            ABC
+        <header>
+            <h1>TO-DO LIST</h1>
+        </header>
+        <main :class="mainClasses">
+            <ul>
+                <li v-for="(todo, i) in todoList" :class="liClasses">
+                    <span>📌 {{todo.text}}</span>
+                    <span>DONE: 
+                        <small v-if="todo.done === true" class="colorGreen">{{todo.done}}</small>
+                        <small v-else="todo.done === false" class="colorRed">{{todo.done}}</small>
+                    </span>
+                </li>
+            </ul>
         </main>
     </div>
     <!-- JS Script -->
