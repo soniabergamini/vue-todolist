@@ -29,8 +29,9 @@
                         <!-- Task Name -->
                         <span :class="todo.done ? 'taskDone' : null">📌 {{todo.text}}</span>
                         <!-- Task Status and Buttons -->
-                        <small class="pRelative dFlex gap1em">DONE: 
+                        <div class="pRelative dFlex gap1em alignCenter">
                             <!-- Task Status -->
+                            <small>DONE:</small>
                             <span v-if="todo.done" class="colorGreen">{{todo.done}}</span>
                             <span v-else="!todo.done" class="colorRed">{{todo.done}}</span>
                             <!-- Change Status Buttons and tooltips -->
@@ -39,13 +40,13 @@
                             <button v-else="!todo.done" @mouseover="showTooltip(i)" @mouseleave="hideTooltip" @click="changeTaskStatus(i)"><i class="fa-solid fa-circle-check colorGreen"></i></button>
                             <!-- Trash Button -->
                             <button @click="removeTask(i)"> <i class="fa-regular fa-trash-can"></i></button>
-                        </small>
+                        </div>
                     </li>
                     <li v-show="todoList.length === 0" class="congratsLi">ALL DONE! You Rock 🎉🍻</li>
                 </ul>
                 <!-- Add Task Section -->
                 <input :style="inpuntInv" v-model="newTask.text" type="text" placeholder="New todo here..." @keyUp.enter="addTask">
-                <button @click="addTask">ADD</button>
+                <button id="btnAdd" @click="addTask">ADD</button>
             </div>
         </main>
     </div>

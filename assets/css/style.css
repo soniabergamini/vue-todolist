@@ -133,7 +133,7 @@ input {
   100% { transform: rotate(0deg); }
 }
 
-div > button:last-child {
+#btnAdd {
     border-radius: var(--smallPix);
     border: 1px solid var(--pink);
     padding: .5rem .6rem;
@@ -143,7 +143,7 @@ div > button:last-child {
     margin-left: .6rem;
 }
 
-div > button:last-child:hover {
+#btnAdd:hover {
     background-color: var(--pink);
     color: var(--green);
     font-weight: 900;
