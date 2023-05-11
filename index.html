@@ -43,8 +43,8 @@
                             <button @click="removeTask(i)" @mouseover="showDelTooltip(i)" @mouseleave="hideTooltip"><i class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </li>
-                    <li v-show="todoList.length === 0" class="congratsLi">ALL DONE! You Rock 🎉🍻</li>
                 </ul>
+                <h2 v-show="todoList.length === 0" class="congrats">ALL DONE! You Rock 🎉🍻</h2>
                 <!-- Add Task Section -->
                 <input :style="inpuntInv" v-model="newTask.text" type="text" placeholder="New todo here..." @keyUp.enter="addTask">
                 <button id="btnAdd" @click="addTask">ADD</button>

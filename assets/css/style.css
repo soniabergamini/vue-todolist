@@ -83,8 +83,7 @@ li > span:first-child {
     text-decoration: line-through;
 }
 
-.congratsLi {
-    border-bottom: transparent;
+.congrats {
     letter-spacing: var(--smallPix);
     font-family: 'Rubik Microbe', cursive;
     color: var(--green);
