@@ -17,7 +17,8 @@ createApp({
             mainClasses: "dFlex alignCenter justyCenter",
             liClasses: "dFlex gap2em justySpaceBtw",
             inpuntInv: "",
-            currentMouseover: "null"
+            currentMouseover: "null",
+            currentDelMouseover: "null"
         }
     },
     methods: {
@@ -44,21 +45,34 @@ createApp({
         changeTaskStatus(i) {
             this.todoList[i].done = !this.todoList[i].done
         },
-        // Add classes to tooltips
-        tooltipsClass(i) {
+        // Add classes to change status button tooltips
+        tooltipsStatClass(i) {
             if (this.currentMouseover === i) {
                 return "pAbsolute tooltips"
             } else {
                 return "pAbsolute dNone tooltips"
             }    
         },
+        // Add classes to delete button tooltips
+        tooltipsDelClass(i) {
+            if (this.currentDelMouseover === i) {
+                return "pAbsolute tooltips"
+            } else {
+                return "pAbsolute dNone tooltips"
+            }    
+        },
         // Show tooltip on "change task status button" mouseover
-        showTooltip(i) {
+        showStatusTooltip(i) {
             this.currentMouseover = i
         },
-        // Hide tooltip on "change task status button" mouseleave
+        // Show tooltip on "delete task button" mouseover
+        showDelTooltip(i) {
+            this.currentDelMouseover = i
+        },
+        // Hide tooltip on "change status/delete task button" mouseleave
         hideTooltip() {
-            this.currentMouseover = null
+            this.currentMouseover = null,
+            this.currentDelMouseover = null
         }
     }
 }).mount('#app')

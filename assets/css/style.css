@@ -115,6 +115,10 @@ li button:hover {
     font-size: 12px;
 }
 
+.delTooltips {
+    right: -1rem;
+}
+
 input {
     background-color: transparent;
     color: white;
