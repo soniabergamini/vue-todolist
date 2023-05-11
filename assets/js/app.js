@@ -38,7 +38,9 @@ createApp({
                 // If newTask is badly written, add/remove shake animation
                 this.inpuntInv = "animation: shake .2s; animation-iteration-count: 2;",
                 setTimeout(() => this.inpuntInv = "", 600);
-            }                   
+            }   
+            this.currentMouseover = null,
+            this.currentDelMouseover = null                
         },
         // Change task status (done: true/false)
         changeTaskStatus(i) {
