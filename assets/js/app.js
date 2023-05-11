@@ -30,8 +30,7 @@ createApp({
         addTask() {
             if (this.newTask.text.length > 2) {
                 // If newTask is correctly written, add it to the list
-                let newTodo = {...this.newTask};
-                this.todoList.push(newTodo),
+                this.todoList.push({...this.newTask}),
                 this.newTask.text = ""
                 // Alternative Method to add newTask:
                 // let newTodo = { text: this.newTask.text, done: false },
@@ -45,21 +44,13 @@ createApp({
         changeTaskStatus(i) {
             this.todoList[i].done = !this.todoList[i].done
         },
-        // Add classes to change status button tooltips
+        // Dynamically add class dNone to change status button tooltips
         tooltipsStatClass(i) {
-            if (this.currentMouseover === i) {
-                return "pAbsolute tooltips"
-            } else {
-                return "pAbsolute dNone tooltips"
-            }    
+            return (this.currentMouseover != i) ? "dNone" : null
         },
-        // Add classes to delete button tooltips
+        // Dynamically add class dNone to delete button tooltips
         tooltipsDelClass(i) {
-            if (this.currentDelMouseover === i) {
-                return "pAbsolute tooltips"
-            } else {
-                return "pAbsolute dNone tooltips"
-            }    
+            return (this.currentDelMouseover != i) ? "dNone" : null
         },
         // Show tooltip on "change task status button" mouseover
         showStatusTooltip(i) {

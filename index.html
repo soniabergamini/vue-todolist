@@ -35,12 +35,12 @@
                             <span v-if="todo.done" class="colorGreen">{{todo.done}}</span>
                             <span v-else="!todo.done" class="colorRed">{{todo.done}}</span>
                             <!-- Change Status Buttons and tooltips -->
-                            <span :class="tooltipsStatClass(i)">change status</span>
+                            <span class="pAbsolute tooltips" :class="tooltipsStatClass(i)">change status</span>
                             <button v-if="todo.done" @mouseover="showStatusTooltip(i)" @mouseleave="hideTooltip" @click="changeTaskStatus(i)"><i class="fa-regular fa-circle-xmark colorRed"></i></button>
                             <button v-else="!todo.done" @mouseover="showStatusTooltip(i)" @mouseleave="hideTooltip" @click="changeTaskStatus(i)"><i class="fa-solid fa-circle-check colorGreen"></i></button>
                             <!-- Trash Button and tooltip -->
-                            <span class="delTooltips" :class="tooltipsDelClass(i)">delete</span>
-                            <button @click="removeTask(i)" @mouseover="showDelTooltip(i)" @mouseleave="hideTooltip"> <i class="fa-regular fa-trash-can"></i></button>
+                            <span class="delTooltips pAbsolute tooltips" :class="tooltipsDelClass(i)">delete</span>
+                            <button @click="removeTask(i)" @mouseover="showDelTooltip(i)" @mouseleave="hideTooltip"><i class="fa-regular fa-trash-can"></i></button>
                         </div>
                     </li>
                     <li v-show="todoList.length === 0" class="congratsLi">ALL DONE! You Rock 🎉🍻</li>
